@@ -86,39 +86,39 @@ namespace NUnitTestProject
         }
 
         /// <summary>
-        /// TC-3.1, 3.2, 3.3 to test max integer
+        /// TC-4.1, 4.2, 4.3 to test max integer
         /// </summary>
         
-        [TestCase(89, 23, 65)]
+        [TestCase(89, 23, 65, 12)]
         [TestCase(23, 89, 65)]
         [TestCase(89, 65, 89)]
-        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(int first, int second, int third)
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(int[] value )
         { 
-            Assert.AreEqual(89, Generic<int>.MaxAmongThreeGenericInput(first, second, third));
+            Assert.AreEqual(89, Generic<int>.MaxAmongThreeGenericInput(value));
         }
 
         /// <summary>
-        /// TC-3.1, 3.2, 3.3 to test max float
+        /// TC-4.1, 4.2, 4.3 to test max float
         /// </summary>
 
         [TestCase(22.03f, 13.98f, 6.34f)]
         [TestCase(13.98f, 22.03f, 6.34f)]
         [TestCase(22.03f, 6.34f, 22.08f)]
-        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(float first, float second, float third)
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(float[] value)
         {
-            Assert.AreEqual(22.03f, Generic<float>.MaxAmongThreeGenericInput(first, second, third));
+            Assert.AreEqual(22.03f, Generic<float>.MaxAmongThreeGenericInput(value));
         }
 
 
         /// <summary>
-        /// TC-3.1, 3.2, 3.3 to test max string
+        /// TC-4.1, 4.2, 4.3 to test max string
         /// </summary>
         [TestCase("pineapple", "apple", "orange")]
         [TestCase("apple", "pineapple", "orange")]
         [TestCase("apple", "orange", "pineapple")]
-        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(string first, string second, string third)
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(string[] value)
         {
-            Assert.AreEqual("pineapple", Generic<string>.MaxAmongThreeGenericInput(first, second, third));
+            Assert.AreEqual("pineapple", Generic<string>.MaxAmongThreeGenericInput(value));
         }
 
 
