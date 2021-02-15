@@ -72,5 +72,56 @@ namespace NUnitTestProject
             float result = maxThreeNumbers.MaxOfThreeFloats(13.98f, 6.34f, 22.08f);
             Assert.AreEqual(22.03f, result);
         }
+
+        /// <summary>
+        /// TC-3.1, 3.2, 3.3  Test max 
+        /// </summary>
+        [TestCase("pineapple","apple","orange")]
+        [TestCase("apple", "pineapple", "orange")]
+        [TestCase("apple", "orange", "pineapple")]
+        public void Given3Strings_WhenAtDifferentPositions_ShouldReturnMaxValue(string first, string second, string third)
+        {
+            string result = maxThreeNumbers.MaxOfThreeString(first, second, third);
+            Assert.AreEqual("pineapple", result);
+        }
+
+        /// <summary>
+        /// TC-3.1, 3.2, 3.3 to test max integer
+        /// </summary>
+        
+        [TestCase(89, 23, 65)]
+        [TestCase(23, 89, 65)]
+        [TestCase(89, 65, 89)]
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(int first, int second, int third)
+        { 
+            Assert.AreEqual(89, Generic<int>.MaxAmongThreeGenericInput(first, second, third));
+        }
+
+        /// <summary>
+        /// TC-3.1, 3.2, 3.3 to test max float
+        /// </summary>
+
+        [TestCase(22.03f, 13.98f, 6.34f)]
+        [TestCase(13.98f, 22.03f, 6.34f)]
+        [TestCase(22.03f, 6.34f, 22.08f)]
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(float first, float second, float third)
+        {
+            Assert.AreEqual(22.03f, Generic<float>.MaxAmongThreeGenericInput(first, second, third));
+        }
+
+
+        /// <summary>
+        /// TC-3.1, 3.2, 3.3 to test max string
+        /// </summary>
+        [TestCase("pineapple", "apple", "orange")]
+        [TestCase("apple", "pineapple", "orange")]
+        [TestCase("apple", "orange", "pineapple")]
+        public void Given3Values_WhenAtDifferentPositions_ShouldReturnMaxValue(string first, string second, string third)
+        {
+            Assert.AreEqual("pineapple", Generic<string>.MaxAmongThreeGenericInput(first, second, third));
+        }
+
+
+
     }
 }
