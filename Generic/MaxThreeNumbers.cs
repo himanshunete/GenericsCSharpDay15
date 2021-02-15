@@ -9,6 +9,7 @@ namespace Generic
     /// </summary>
     public class MaxThreeNumbers
     {
+
         /// <summary>
         /// UC-1 To find maximum integer value
         /// </summary>
